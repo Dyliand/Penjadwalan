@@ -6,8 +6,8 @@
         </a>
 
     </li>
-    <li class="treeview">
-        <a href="<?php echo base_url('DataJurusan') ?>" class="nav-link">
+    <li>
+        <a href="<?php echo base_url('datajurusan') ?>" class="nav-link">
             <i class="fa fa-files-o"></i>
             <span>Data Jurusan</span>
         </a>

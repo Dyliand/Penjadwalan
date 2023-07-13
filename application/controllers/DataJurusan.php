@@ -8,9 +8,9 @@ class DataJurusan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if (!$this->session->has_userdata('id_user')) {
-            redirect('Login');
-        }
+        // if (!$this->session->has_userdata('id_user')) {
+        //     redirect('Login');
+        // }
         $this->load->model('Model_Jurusan');
         $this->load->library('form_validation');
     }
