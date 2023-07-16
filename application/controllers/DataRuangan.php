@@ -1,21 +1,16 @@
-<?php
-
-/**
- * 
- */
-class DataRuangan extends CI_Controller
+<?php class DataRuangan extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
 
-        $this->load->model('Model_Ruangan');
+        $this->load->model('Model_ruangan');
         $this->load->library('form_validation');
     }
 
     function index()
     {
-        $data['ruangan'] = $this->Model_Ruangan->getAllData();
+        $data['ruangan'] = $this->Model_ruangan->getAllData();
         $this->load->view('header');
         $this->load->view('sidebar');
         $this->load->view('View_Ruangan', $data);
@@ -29,7 +24,7 @@ class DataRuangan extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->index();
         } else {
-            $this->Model_Ruangan->tambah_data();
+            $this->Model_ruangan->tambah_data();
             $this->session->set_flashdata('flash_ruangan', 'Disimpan');
             redirect('DataRuangan');
         }
@@ -37,7 +32,7 @@ class DataRuangan extends CI_Controller
 
     public function hapus($id)
     {
-        $this->Model_Ruangan->hapus_data($id);
+        $this->Model_ruangan->hapus_data($id);
         $this->session->set_flashdata('flash_ruangan', 'Dihapus');
         redirect('DataRuangan');
     }
@@ -47,13 +42,13 @@ class DataRuangan extends CI_Controller
         $this->form_validation->set_rules("id_ruang", "Kode Ruangan", "required|max_length[20]");
         $this->form_validation->set_rules("nm_ruangan", "Nama Ruangan", "required");
         if ($this->form_validation->run() == FALSE) {
-            $data['ubah_ruangan'] = $this->Model_Ruangan->detail_data($id);
+            $data['ubah_ruangan'] = $this->Model_ruangan->detail_data($id);
             $this->load->view('header');
             $this->load->view('sidebar');
             $this->load->view('Ubah_Ruangan', $data);
             $this->load->view('footer');
         } else {
-            $this->Model_Ruangan->ubah_data();
+            $this->Model_ruangan->ubah_data();
             $this->session->set_flashdata('flash_ruangan', 'DiUbah');
             redirect('DataRuangan');
         }
