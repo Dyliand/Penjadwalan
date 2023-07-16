@@ -8,9 +8,7 @@ class DataJurusan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if (!$this->session->has_userdata('id_user')) {
-            redirect('Login');
-        }
+
         $this->load->model('Model_Jurusan');
         $this->load->library('form_validation');
     }
@@ -20,8 +18,8 @@ class DataJurusan extends CI_Controller
         $data['jurusan'] = $this->Model_Jurusan->getAllData();
         $this->load->view('header');
         $this->load->view('sidebar');
-        $this->load->view('footer');
         $this->load->view('View_Jurusan', $data);
+        $this->load->view('footer');
     }
 
     public function validation_form()
@@ -49,9 +47,11 @@ class DataJurusan extends CI_Controller
         $this->form_validation->set_rules("id_jur", "Kode Jurusan", "required|max_length[20]");
         $this->form_validation->set_rules("nm_jur", "Nama Jurusan", "required");
         if ($this->form_validation->run() == FALSE) {
-            $data['ubah'] = $this->Jurusan_Model->detail_data($id);
+            $data['ubah_jurusan'] = $this->Model_Jurusan->detail_data($id);
+            $this->load->view('header');
             $this->load->view('sidebar');
             $this->load->view('Ubah_Jurusan', $data);
+            $this->load->view('footer');
         } else {
             $this->Model_Jurusan->ubah_data();
             $this->session->set_flashdata('flash_jurusan', 'DiUbah');

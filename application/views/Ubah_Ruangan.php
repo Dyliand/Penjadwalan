@@ -4,13 +4,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1> Ubah Data Guru</h1>
+                    <h1> Ubah Data Ruangan</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">Dashboard</li>
-                        <li class="breadcrumb-item">Data Guru</li>
-                        <li class="breadcrumb-item active">Ubah Data Guru</li>
+                        <li class="breadcrumb-item">Data Ruangan</li>
+                        <li class="breadcrumb-item active">Ubah Data Ruangan</li>
                     </ol>
                 </div>
             </div>
@@ -33,12 +33,12 @@
                                 <form action="" method="post" accept-charset="utf-8">
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Kode Jurusan</label>
-                                            <input type="text" class="form-control disabled" name="id_jur" value="<?= $ubah['id_jurusan'] ?>" readonly>
+                                            <label for="exampleInputEmail1">Kode Ruangan</label>
+                                            <input type="text" class="form-control disabled" name="id_ruang" value="<?= $ubah['id_ruangan'] ?>" readonly>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Nama Jurusan</label>
-                                            <input type="text" class="form-control" name="nm_jur" value="<?= $ubah['nama_jurusan'] ?>">
+                                            <label for="exampleInputPassword1">Nama Ruangan</label>
+                                            <input type="text" class="form-control" name="nm_ruangan" value="<?= $ubah['nama_ruangan'] ?>">
                                         </div>
                                         <input type="submit" name="save" class="btn btn-primary" value="Save">
                                     </div>
