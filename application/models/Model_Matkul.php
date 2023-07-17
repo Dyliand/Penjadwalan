@@ -58,8 +58,8 @@ class Model_Matkul extends CI_Model
                 'sks' => $this->input->post('sks'),
                 'id_jurusan' => $valueJur
             ];
-            if ($this->checkExist($this->input->post('kd_mat'), $this->input->post('nm_matkul'), $this->input->post('semester_matkul'), $this->input->post('sks'), $valueJur)) {
-                $this->db->insert('matkul;', $data);
+            if ($this->checkExist($this->input->post('kd_mat'), $this->input->post('nm_matkul'),  $this->input->post('sks'), $this->input->post('semester_matkul'), $valueJur)) {
+                $this->db->insert('matkul', $data);
             }
         }
     }
@@ -116,9 +116,9 @@ class Model_Matkul extends CI_Model
             'nama_matkul' => $this->input->post('nm_mat', true),
             'sks' => $this->input->post('sks', true),
             'id_jurusan' => $this->input->post('id_jur', true),
-            'semester_mapel' => $this->input->post('semester_mapel', true)
+            'semester_matkul' => $this->input->post('semester_matkul', true)
         );
-        if ($this->checkExist($this->input->post('kd_mat'), $this->input->post('semester_mapel'), $this->input->post('semester_matkul', true), $this->input->post('sks'), $this->input->post('id_jur', true))) {
+        if ($this->checkExist($this->input->post('kd_mat'), $this->input->post('nm_mat'), $this->input->post('semester_matkul', true), $this->input->post('sks'), $this->input->post('id_jur', true))) {
             $this->db->where('id_matkul', $this->input->post('id_mat', true));
             $this->db->update('matkul', $data);
         }

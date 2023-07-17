@@ -99,7 +99,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Semester Matkul</label>
-                                                <select class="form-control" name="kelompok_mapel">
+                                                <select class="form-control" name="semester_matkul">
                                                     <option value="A">1 </option>
                                                     <option value="B">2 </option>
                                                     <option value="C">3</option>

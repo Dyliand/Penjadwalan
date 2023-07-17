@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2023 at 02:50 PM
+-- Generation Time: Jul 17, 2023 at 06:03 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -204,9 +204,7 @@ CREATE TABLE `jurusan` (
 --
 
 INSERT INTO `jurusan` (`id_jurusan`, `nama_jurusan`) VALUES
-('3', 'Informatika'),
-('akn', 'akuntansi'),
-('kntr', 'perkantoran');
+('TF', 'Informatika');
 
 -- --------------------------------------------------------
 
@@ -355,6 +353,14 @@ CREATE TABLE `matkul` (
   `sks` int(11) NOT NULL,
   `id_jurusan` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `matkul`
+--
+
+INSERT INTO `matkul` (`id_matkul`, `kode_matkul`, `nama_matkul`, `semester_matkul`, `sks`, `id_jurusan`) VALUES
+(0, 'ANIM', 'Animasi Komputer', '5', 2, 'TF'),
+(1, 'Jar', 'Jaringan Komputer', '1', 2, 'TF');
 
 -- --------------------------------------------------------
 
