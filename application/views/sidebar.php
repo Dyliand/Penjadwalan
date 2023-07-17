@@ -38,17 +38,12 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="<?= base_url('DataMatkul') ?>">
                     <i class="fa fa-pie-chart"></i>
                     <span>Data Mata Kuliah</span>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-pie-chart"></i>
-                    <span>Semester</span>
-                </a>
-            </li>
+
             <li>
                 <a href="#">
                     <i class="fa fa-files-o"></i>
