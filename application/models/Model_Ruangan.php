@@ -3,7 +3,7 @@
 /**
  * 
  */
-class Model_Ruangan extends CI_Model
+class Model_ruangan extends CI_Model
 {
     public function getAllData($grup = null)
     {

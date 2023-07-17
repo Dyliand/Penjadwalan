@@ -42,7 +42,7 @@
         $this->form_validation->set_rules("id_ruang", "Kode Ruangan", "required|max_length[20]");
         $this->form_validation->set_rules("nm_ruangan", "Nama Ruangan", "required");
         if ($this->form_validation->run() == FALSE) {
-            $data['ubah_ruangan'] = $this->Model_ruangan->detail_data($id);
+            $data = $this->Model_ruangan->detail_data($id);
             $this->load->view('header');
             $this->load->view('sidebar');
             $this->load->view('Ubah_Ruangan', $data);

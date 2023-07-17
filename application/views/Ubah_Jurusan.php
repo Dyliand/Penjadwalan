@@ -34,11 +34,11 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Kode Jurusan</label>
-                                            <input type="text" class="form-control disabled" name="id_jur" value="<?= $ubah['id_jurusan'] ?>" readonly>
+                                            <input type="text" class="form-control disabled" name="id_jur" value="<?= $id_jurusan; ?>" readonly>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Nama Jurusan</label>
-                                            <input type="text" class="form-control" name="nm_jur" value="<?= $ubah['nama_jurusan'] ?>">
+                                            <input type="text" class="form-control" name="nm_jur" value="<?= $nama_jurusan; ?>">
                                         </div>
                                         <input type="submit" name="save" class="btn btn-primary" value="Save">
                                     </div>

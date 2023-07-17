@@ -47,7 +47,7 @@ class DataJurusan extends CI_Controller
         $this->form_validation->set_rules("id_jur", "Kode Jurusan", "required|max_length[20]");
         $this->form_validation->set_rules("nm_jur", "Nama Jurusan", "required");
         if ($this->form_validation->run() == FALSE) {
-            $data['ubah_jurusan'] = $this->Model_Jurusan->detail_data($id);
+            $data = $this->Model_Jurusan->detail_data($id);
             $this->load->view('header');
             $this->load->view('sidebar');
             $this->load->view('Ubah_Jurusan', $data);
