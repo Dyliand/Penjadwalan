@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2023 at 06:03 PM
+-- Generation Time: Jul 21, 2023 at 07:27 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -35,6 +35,14 @@ CREATE TABLE `dosen` (
   `email` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `code_color` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `dosen`
+--
+
+INSERT INTO `dosen` (`id_dosen`, `nama_dosen`, `status_dosen`, `no_telp`, `email`, `code_color`) VALUES
+(123, 'Sudaryanto', 'tetap', 812899221, 'pakryan@gmail.com', '#9d8080'),
+(1234, 'Salam', 'luar', 81722263, 'salam@gmail.com', '#a2c520');
 
 -- --------------------------------------------------------
 
@@ -359,8 +367,7 @@ CREATE TABLE `matkul` (
 --
 
 INSERT INTO `matkul` (`id_matkul`, `kode_matkul`, `nama_matkul`, `semester_matkul`, `sks`, `id_jurusan`) VALUES
-(0, 'ANIM', 'Animasi Komputer', '5', 2, 'TF'),
-(1, 'Jar', 'Jaringan Komputer', '1', 2, 'TF');
+(0, 'ANIM', 'Animasi Komputer', '3', 2, 'TF');
 
 -- --------------------------------------------------------
 
@@ -915,7 +922,10 @@ CREATE TABLE `ruangan` (
 --
 
 INSERT INTO `ruangan` (`id_ruangan`, `id_jurusan`, `nama_ruangan`) VALUES
-('HLM2', '', 'Halim 2');
+('HLM1', '', 'Halim 1'),
+('HLM2', '', 'Halim 2'),
+('HLM3', '', 'Halim 3'),
+('HLM4', '', 'Halim 4');
 
 -- --------------------------------------------------------
 
@@ -963,6 +973,21 @@ INSERT INTO `rumusan` (`id_rumusan`, `id_guru`, `hari_request`, `kelas`, `total`
 (181, 23, 'Senin,Selasa,Rabu,Kamis,Jum`at,Sabtu', 'XaknA,XIaknA,XIIaknA,XIIaknB', 198, 29, 0.15),
 (182, 24, 'Senin,Selasa,Rabu,Kamis,Jum`at,Sabtu', 'XIIkntrA,XIkntrA', 100, 31, 0.31),
 (183, 25, 'Senin,Selasa,Rabu,Kamis,Jum`at,Sabtu', 'XaknA,XIaknA,XIkntrA,XkntrA', 200, 8, 0.04);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tugas_dosen`
+--
+
+CREATE TABLE `tugas_dosen` (
+  `id_tugas` varchar(16) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `id_dosen` varchar(16) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `id_matkul` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `kode_matkul` varchar(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `id_ruangan` varchar(16) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `sks` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -1181,6 +1206,12 @@ ALTER TABLE `ruangan`
 --
 ALTER TABLE `rumusan`
   ADD PRIMARY KEY (`id_rumusan`);
+
+--
+-- Indexes for table `tugas_dosen`
+--
+ALTER TABLE `tugas_dosen`
+  ADD PRIMARY KEY (`id_tugas`);
 
 --
 -- Indexes for table `tugas_guru`

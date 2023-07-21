@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
+<header>
+  <section class="content-header">
+    <h1>
+      Dashboard
+      <small>Control panel</small>
+    </h1>
 
-
+  </section>
+</header>
 
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="content-wrapper">
